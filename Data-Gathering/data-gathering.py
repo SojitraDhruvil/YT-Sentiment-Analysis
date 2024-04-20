@@ -15,9 +15,7 @@ nltk.download('punkt')
 
 
 # YouTube Data API
-# api_key = "AIzaSyCw2Jv32VeeGUx3cd_t1E85XlQ-KpZGCBM"
-api_key = "AIzaSyARddhV0r2iP7sdnb9yWdjDxvceZw8ViL0"
-# api_key = "AIzaSyDG1D34FAEtIVK_o9JcjWD_owY-v2LG8os"
+api_key = ""
 
 youtube = build('youtube', 'v3', developerKey=api_key)
 
