@@ -6,16 +6,16 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 
 #Concatenate of two csv files
-# df1 = pd.read_csv('../Data-Gathering/Data_Comment_1.csv')
-# df2 = pd.read_csv('../Data-Gathering/Data_Comment_2.csv')
-# comments_df = pd.concat([df1,df2])
-# comments_df.to_csv('Merge_Data_Comment.csv', index=False)
+df1 = pd.read_csv('../Data-Gathering/Data_Comment_1.csv')
+df2 = pd.read_csv('../Data-Gathering/Data_Comment_2.csv')
+comments_df = pd.concat([df1,df2])
+comments_df.to_csv('Merge_Data_Comment.csv', index=False)
 
 
 # Removing certain rows from csv file like timestamp,username,date only keeping videoID and comments
-# df = pd.read_csv('Merge_Data_Comment.csv')
-# df = df.drop(['Date', 'Timestamp', 'Username'], axis=1)
-# df.to_csv('Merge_Data_Comment.csv', index=False)
+df = pd.read_csv('Merge_Data_Comment.csv')
+df = df.drop(['Date', 'Timestamp', 'Username'], axis=1)
+df.to_csv('Merge_Data_Comment.csv', index=False)
 
 
 # Data Preprocessing like lowering the value, removing emojis, removing stopwords, removing special characters like [,.;:!?|()%$#@^&{}]
@@ -48,9 +48,9 @@ df.to_csv('Merge_Data_Comment.csv', index=False)
 
 # Removing videoID from main comments data csv and storing it in other csv file.
 
-# df = pd.read_csv('Merge_Data_Comment.csv')
-# unique_video_ids = df['VideoID'].unique()
-# video_ids_df = pd.DataFrame({'VideoID': unique_video_ids})
-# video_ids_df.to_csv('unique_video_ids.csv', index=False)
+df = pd.read_csv('Merge_Data_Comment.csv')
+unique_video_ids = df['VideoID'].unique()
+video_ids_df = pd.DataFrame({'VideoID': unique_video_ids})
+video_ids_df.to_csv('unique_video_ids.csv', index=False)
 
-# df = df.drop(['VideoID'], axis=1)
+df = df.drop(['VideoID'], axis=1)
